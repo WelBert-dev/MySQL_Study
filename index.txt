@@ -1,8 +1,11 @@
 -- Data de criação: 07/08/2022 (Relembrando o que aprendi no IFSP e mais estudos pessoais).
 -- Licença: GPL v3.0 (Open Source).
--- Objetivo: Utilizar e Estudar TODOS os comandos e possibilidades do SGBD e da linguagem SQL.
-
--- Documentação Oficial MySQL8.0: https://dev.mysql.com/doc/refman/8.0/en/programs-overview.html
+-- Objetivo: Utilizar e Estudar TODOS os comandos e possibilidades do SGBD e da linguagem SQL, para utilizar como cola(Irei deixar a navegação clara e objetiva para melhor compreensão).
+-- Fontes:
+   -- Documentação Oficial MySQL8.0: https://dev.mysql.com/doc/refman/8.0/en/programs-overview.html
+   -- IFSP Campus Salto (Prof Haru).
+   -- Youtube: Bóson Treinamentos (https://youtube.com/c/bosontreinamentos).
+   -- Youtube: Curso em Vídeo (https://youtube.com/c/CursoemV%C3%ADdeo).
 
 -- Conceituando: Aqui contém todas as operações de acordo com o tipo SQL,
    Para cada Linguagem SQL foi criado uma pasta, e nessa pasta irei explorar
