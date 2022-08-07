@@ -1,0 +1,1 @@
+-- Exercícios CROSS JOIN
