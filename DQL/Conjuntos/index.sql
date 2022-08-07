@@ -82,11 +82,16 @@
 -- É possível simular a interseção utilizando o operador IN ou a junção externa (por exemplo, LEFT OUTER JOIN).
 -- Conceituando: Retorna apenas os registros iguais nas duas ou mais tabelas  (math).
 
--- Interseção com IN e com INNER JOIN:
+-- Interseção com IN, OUTER JOIN e com INNER JOIN:
    -- Exemplo IN: Recuperar as cidades que têm médicos e pacientes cadastrados. 
       SELECT DISTINCT cidade 
       FROM medico 
       WHERE cidade IN (SELECT cidade FROM paciente);
+   -- Exemplo OUTER JOIN:
+      SELECT DISTINCT m.cidade 
+      FROM medico m 
+      LEFT OUTER JOIN paciente p ON (m.cidade = p.cidade) 
+      WHERE p.cidade IS NOT NULL;
    -- Exemplo INNER JOIN:
       SELECT DISTINCT m.cidade 
       FROM medico m 
