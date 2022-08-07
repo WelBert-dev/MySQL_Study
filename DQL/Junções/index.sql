@@ -52,15 +52,15 @@
       WHERE d.nome = 'Informática'; 
       -- Saída:
          -- [1a. Etapa(ON (e.depto_id = d.id))]:
-         -- | MATR | NOME | SALARIO | DEPTO_ID | ID | NOME        |
-         -- | 123  | Mary | 4000.00 | 1        | 1  | Informática |
-         -- | 234  | John | 3000.00 | 1        | 1  | Informática |
-         -- | 345  | Jim  | 2500.00 | 2        | 2  | Matemática  |
-         -- | 456  | Ann  | 3500.00 | 3        | 3  | Física      |
+         -- | MATR | NOME | SALARIO | [DEPTO_ID | ID] | NOME        |
+         -- | 123  | Mary | 4000.00 | [ 1       | 1 ] | Informática |
+         -- | 234  | John | 3000.00 | [ 1       | 1 ] | Informática |
+         -- | 345  | Jim  | 2500.00 | [ 2       | 2 ] | Matemática  |
+         -- | 456  | Ann  | 3500.00 | [ 3       | 3 ] | Física      |
          -- [2a. Etapa(WHERE d.nome = 'Informática')]:
-         -- | MATR | NOME | SALARIO | DEPTO_ID | ID | NOME        |
-         -- | 123  | Mary | 4000.00 | 1        | 1  | Informática |
-         -- | 234  | John | 3000.00 | 1        | 1  | Informática |
+         -- | MATR | NOME | SALARIO | DEPTO_ID | ID | [NOME         ] |
+         -- | 123  | Mary | 4000.00 | 1        | 1  | [ Informática ] |
+         -- | 234  | John | 3000.00 | 1        | 1  | [ Informática ] |
          -- [Resultado Final(SELECT e.matr, e.nome)]:
          -- | MATR | NOME |
          -- | 123  | Mary |
