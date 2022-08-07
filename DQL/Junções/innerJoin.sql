@@ -1,0 +1,1 @@
+-- Exercícios INNER JOIN
