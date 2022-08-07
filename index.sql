@@ -1,6 +1,5 @@
 -- Conceituando: 
 
-
 -- DDL: Data Definition Language
    -- Conceituando: linguagem de difinição de dados, define um grupo de comandos que são utilizados para definir as databases e tabelas.
    -- Comandos:
@@ -20,12 +19,18 @@
 -- DML: Data Manipulation Language
    -- Conceituando: linguagem de manipulação de dados, define um grupo de comandos que são utilizados para manipular os dados no banco.
    -- Comandos:
-      -- INSERT
-      -- UPDATE
-      -- DELETE
+      -- INSERT: utilizado para inserir dados nas tabelas.
+      -- UPDATE: utilizado para atualizar dados já existentes em uma tabela.
+      -- DELETE: utilizado para deletar registros existentes na tabela.
+      -- LOCK: tablet Control concurrency
+      -- CALL: CALL a PL/SQL or JAVA subprogram.
+      -- EXPLAIN PLAN: It describes the acess path to data.
 
 -- DCL: Data Control Language
    -- Conceituando:
+   -- Comandos:
+      -- GRANT: utilizado para pegar privilégios do usuário que acessou a database.
+      -- REVOKE: This command whitdraws the user's acess privileges given by using the GRANT command.
 
 -- TCL: Transaction Control Language
    -- Conceituando:
