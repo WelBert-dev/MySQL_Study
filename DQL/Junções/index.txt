@@ -8,13 +8,22 @@
    -- Junção Externa à Direita (RIGHT OUTER JOIN) 
    -- Junção Externa à Esquerda e à Direita (FULL OUTER JOIN) – MySQL não aceita.
 
+-- Tabelas:
+-- [Emp]                              [Depto]
+-- | MATR | NOME | SALARIO | DEPTO_ID | ID | NOME        | 
+-- | 123  | Mary | 4000.00 |  1       | 1  | Informática |
+-- | 234  | John | 3000.00 |  1       | 2  | Matemática  |
+-- | 345  | Jim  | 2500.00 |  2       | 3  | Física      |
+-- | 456  | Ann  | 3500.00 |  3       | 4  | Química     |
+-- | 567  | Carl | 3000.00 | NULL     |
+
 -- Produto Cartesiano (CROSS JOIN):
    -- Conceituando: Obtém uma tabela contendo todas as combinações possíveis de registros entre duas tabelas T1 e T2
    -- Exemplo: 
       SELECT * FROM empe, depto d; 
       SELECT * FROM empe CROSS JOIN depto d;
       -- Saída:
-         -- matr | nome | salario | depto_id | id | nome 
+         -- MATR | NOME | SALARIO | DEPTO_ID | ID | NOME
          -- 123  | Mary | 4000.00 | 1        | 1  |Informática 
          -- 234  | John | 3000.00 | 1        | 1  |Informática 
          -- 345  | Jim  | 2500.00 | 2        | 1  |Informática 
