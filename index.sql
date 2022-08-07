@@ -34,3 +34,8 @@
 
 -- TCL: Transaction Control Language
    -- Conceituando:
+   -- Comandos:
+      -- COMMIT: Commits a Transaction.
+      -- ROLLBACK: Rollbacks a transaction in case of any error occurs.
+      -- SAVEPOINT:Sets a savepoint within a transaction.
+      -- SET TRANSACTION: Specify characteristics for the transaction.
