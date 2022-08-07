@@ -43,4 +43,38 @@
          -- | Campo Grande   | 
          -- | Rio de Janeiro |
      
-  
+-- UNION ALL: Faz a combinação, porém mantendo as duplicatas (Mais rápido que o UNION, pois não faz a comparação e DISTINCT)
+-- O nº de cópias de uma linha no resultado é m + n, onde m e n é o nº de vezes que a linha aparece na primeira e na segunda parte da união •
+   -- Exemplo: Recuperar as cidades dos médicos e as cidades dos pacientes. 
+      SELECT cidade 
+      FROM medico 
+      UNION ALL
+      SELECT cidade 
+      FROM paciente;
+      -- Tabelas:
+         -- [Médico]:       [Pacientes]:
+         -- | CIDADE        | CIDADE         |
+         -- | Porto Alegre  | São Paulo      |
+         -- | Florianópolis | Rio de Janeiro |
+         -- | Brasília      | Brasília       |
+         -- | NULL          | NULL           |
+         -- | São Paulo     | São Paulo      |
+         -- | Campo Grande  |
+         -- | São Paulo     | 
+         -- | São Paulo     |
+      -- Saída:
+         -- | CIDADE         |
+         -- | Porto Alegre   | 
+         -- | Florianópolis  |
+         -- | Brasília       | 
+         -- | NULL           | 
+         -- | São Paulo      | 
+         -- | Campo Grande   |
+         -- | São Paulo      | 
+         -- | São Paulo      |
+         -- | São Paulo      |
+         -- | Rio de Janeiro |
+         -- | Brasília       | 
+         -- | NULL           |
+         -- | São Paulo      |
+      
