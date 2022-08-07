@@ -23,9 +23,16 @@
       SELECT cidade 
       FROM paciente;
       -- Tabelas:
-         -- [Médico]:
-            -- | cidade |
-            -- | Porto 
-             Alegre Florianópolis Brasília NULL São Paulo Campo Grande São Paulo São Paulo
+         -- [Médico]:       [Pacientes]:
+         -- | cidade        |
+         -- | Porto         |
+         -- | Alegre        |
+         -- | Florianópolis |
+         -- | Brasília      | 
+         -- | NULL          |
+         -- | São Paulo     |
+         -- | Campo Grande  | 
+         -- | São Paulo     |
+         -- | São Paulo     |
      
   
