@@ -35,3 +35,10 @@
          -- 345  | Jim  | 2500.00 | 2        | 4  |Química
          -- 456  | Ann  | 3500.00 | 3        | 4  |Química
          -- 567  | Carl | 3000.00 | NULL     | 4  |Química
+
+-- Junção Interna (INNER JOIN) 
+   -- Conceituando: Obtém uma tabela contendo as combinações de registros entre duas tabelas T1 e T2 que satisfazem a uma condição (de igualdade).
+   -- Exemplo: Recuperar a matrícula e o nome dos empregados do departamento 'Informática'.
+      SELECT e.matr, e.nome FROM emp e INNER JOIN depto d ON (e.depto_id = d.id) 
+      WHERE d.nome = 'Informática'; 
+      -- Saída:
