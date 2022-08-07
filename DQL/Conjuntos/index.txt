@@ -24,15 +24,23 @@
       FROM paciente;
       -- Tabelas:
          -- [Médico]:       [Pacientes]:
-         -- | cidade        |
-         -- | Porto         |
-         -- | Alegre        |
-         -- | Florianópolis |
-         -- | Brasília      | 
-         -- | NULL          |
+         -- | CIDADE        | CIDADE         |
+         -- | Porto Alegre  | São Paulo      |
+         -- | Florianópolis | Rio de Janeiro |
+         -- | Brasília      | Brasília       |
+         -- | NULL          | NULL           |
+         -- | São Paulo     | São Paulo      |
+         -- | Campo Grande  |
+         -- | São Paulo     | 
          -- | São Paulo     |
-         -- | Campo Grande  | 
-         -- | São Paulo     |
-         -- | São Paulo     |
+      -- Saída:
+         -- | CIDADE         | 
+         -- | Porto Alegre   | 
+         -- | Florianópolis  | 
+         -- | Brasília       |
+         -- | NULL           | 
+         -- | São Paulo      |
+         -- | Campo Grande   | 
+         -- | Rio de Janeiro |
      
   
