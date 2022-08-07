@@ -1,4 +1,6 @@
--- Conceituando: 
+-- Conceituando: Aqui contém todas as operações de acordo com o tipo SQL,
+   Para cada Linguagem SQL foi criado uma pasta, e nessa pasta irei explorar
+   cada comando, e também vão conter sub-pastas com exercícios!
 
 -- DDL: Data Definition Language
    -- Conceituando: linguagem de difinição de dados, define um grupo de comandos que são utilizados para definir as databases e tabelas.
