@@ -1,3 +1,8 @@
+-- Data de criação: 07/08/2022 (Relembrando o que aprendi no IFSP e mais estudos pessoais).
+-- Licença: GPLv3 (Open Source).
+
+-- Documentação Oficial MySQL8.0: https://dev.mysql.com/doc/refman/8.0/en/programs-overview.html
+
 -- Conceituando: Aqui contém todas as operações de acordo com o tipo SQL,
    Para cada Linguagem SQL foi criado uma pasta, e nessa pasta irei explorar
    cada comando, e também vão conter sub-pastas com exercícios!
