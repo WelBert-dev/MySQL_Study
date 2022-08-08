@@ -16,16 +16,16 @@
 -- As colunas devem ser de tipos de dados compatíveis.
 
 -- Tabelas:
-         -- [Médico]:       [Pacientes]:
-         -- | CIDADE        | CIDADE         |
-         -- | Porto Alegre  | São Paulo      |
-         -- | Florianópolis | Rio de Janeiro |
-         -- | Brasília      | Brasília       |
-         -- | NULL          | NULL           |
-         -- | São Paulo     | São Paulo      |
-         -- | Campo Grande  |
-         -- | São Paulo     | 
-         -- | São Paulo     |
+   -- [Médico]:       [Pacientes]:
+   -- | CIDADE        | CIDADE         |
+   -- | Porto Alegre  | São Paulo      |
+   -- | Florianópolis | Rio de Janeiro |
+   -- | Brasília      | Brasília       |
+   -- | NULL          | NULL           |
+   -- | São Paulo     | São Paulo      |
+   -- | Campo Grande  |
+   -- | São Paulo     | 
+   -- | São Paulo     |
 
 -- UNION: Operador usado para combinar (união) o resultado de duas ou mais declarações SELECT.
    -- Exemplo: Recuperar as cidades dos médicos e as cidades dos pacientes.
