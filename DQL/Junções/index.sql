@@ -91,3 +91,32 @@
       -- | 1    | 123  | Mary | 4000.00 | [ Informática ] |
       -- | 1    | 234  | John | 3000.00 | [ Informática ] |
      
+-- Junção Externa à Esquerda (LEFT OUTER JOIN):
+   -- Conceituando: Obtém uma tabela contendo os registros da tabela T1 e os registros da tabela T2. Traz todos os registros de T1, mesmo que não haja match com registro da tabela T2.
+   -- Exemplo:
+      SELECT * 
+      FROM emp e 
+      LEFT OUTER JOIN depto d ON (e.depto_id = d.id);
+      -- Saída: Mantém os registros da tabela a esquerda (EMP e completa com NULL aonde não deu math)
+         -- | MATR | E_NOME | SALARIO | DEPTO_ID | ID    | D_NOME      | 
+         -- | 123  | Mary   | 4000.00 | 1        | 1     | Informática | 
+         -- | 234  | John   | 3000.00 | 1        | 1     | Informática | 
+         -- | 345  | Jim    | 2500.00 | 2        | 2     | Matemática  | 
+         -- | 456  | Ann    | 3500.00 | 3        | 3     | Física      | 
+         -- | 567  | Carl   | 3000.00 | [ NULL   | NULL  | NULL      ] | 
+    -- Exemplo 2: Recuperar o id e o nome dos departamentos que não possuem nenhum empregado vinculado.
+       SELECT d.id, d.nome
+       FROM depto d
+       LEFT OUTER JOIN emp e ON (d.id = e.depto_id) 
+       WHERE e.matr IS NULL;
+       -- Saída: 
+          -- [1a Etapa(Elimina todos que não são NULL)]:
+          -- | ID | D_NOME      | MATR | E_NOME | SALARIO | DEPTO_ID |  
+          ---|-1--|-Informática-|-123--|-Mary---|-4000.00-|-1--------|--
+          ---|-1--|-Informática-|-234--|-John---|-3000.00-|-1--------|--
+          ---|-2--|-Matemática--|-345--|-Jim----|-2500.00-|-2--------|--
+          ---|-3--|-Física------|-456--|-Ann----|-3500.00-|-3--------|--
+          -- | 4  | Química     | NULL | NULL   | NULL    | NULL     |
+          -- [Resultado Final (WHERE e.matr IS NULL)]:
+          -- | ID | D_NOME  |
+          -- | 4  | QUÍMICA |
