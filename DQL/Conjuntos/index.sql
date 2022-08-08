@@ -73,16 +73,16 @@
 -- Conceituando: Retorna apenas os registros iguais nas duas ou mais tabelas  (math).
 
 -- Interseção com IN, OUTER JOIN e com INNER JOIN:
-   -- Exemplo IN: Recuperar as cidades que têm médicos e pacientes cadastrados. 
+   -- Exemplo com IN: Recuperar as cidades que têm médicos e pacientes cadastrados. 
       SELECT DISTINCT cidade 
       FROM medico 
       WHERE cidade IN (SELECT cidade FROM paciente);
-   -- Exemplo OUTER JOIN:
+   -- Exemplo com OUTER JOIN:
       SELECT DISTINCT m.cidade 
       FROM medico m 
       LEFT OUTER JOIN paciente p ON (m.cidade = p.cidade) 
       WHERE p.cidade IS NOT NULL;
-   -- Exemplo INNER JOIN:
+   -- Exemplo com INNER JOIN:
       SELECT DISTINCT m.cidade 
       FROM medico m 
       INNER JOIN paciente p ON (m.cidade = p.cidade);
@@ -90,4 +90,29 @@
          -- | CIDADE    |
          -- | Brasília  |
          -- | São Paulo | 
-   
+ 
+-- Diferença: O MySQL também não possui um operador para obter a diferença entre duas ou mais declarações SELECT (como o EXCEPT no PostgreSQL).
+-- Também é possível simular a diferença utilizando o operador IN ou a junção externa (por exemplo, LEFT OUTER JOIN).
+-- Conceituando: Retorna apenas os registros que NÃO fazem math (Oposto da Interseção), ou seja, os registros que são diferentes.
+
+-- Diferença com IN e OUTER JOIN:
+   -- Exemplo com IN: Recuperar as cidades que têm médicos e não tem pacientes cadastrados.
+      SELECT m.cidade 
+      FROM medico m 
+      WHERE m.cidade 
+      NOT IN (
+      SELECT p.cidade 
+      FROM paciente p 
+      WHERE p.cidade IS NOT NULL);
+   -- Exemplo com OUTER JOIN:
+      SELECT DISTINCT m.cidade 
+      FROM medico m 
+      LEFT OUTER JOIN paciente p ON (m.cidade = p.cidade)
+      WHERE m.cidade IS NOT NULL 
+      AND p.cidade IS NULL;
+      -- Saída: Cidades em que médicos possuem, porém clientes não.
+         -- | CIDADE        |
+         -- | Porto Alegre  |
+         -- | Florianópolis |
+         -- | Campo Grande  |
+   -- Obs: Mais informações sobre o operador IN no material do prof!
