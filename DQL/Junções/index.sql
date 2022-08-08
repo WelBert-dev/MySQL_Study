@@ -120,3 +120,6 @@
           -- [Resultado Final (WHERE e.matr IS NULL)]:
           -- | ID | D_NOME  |
           -- | 4  | QUÍMICA |
+
+-- Junção Externa à Direita (RIGHT OUTER JOIN)
+   -- Conceituando: O mesmo princípio do LEFT se aplica neste, mudando o alvo(tabela) para a tabela do lado direito.
