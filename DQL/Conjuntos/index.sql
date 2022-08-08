@@ -15,14 +15,7 @@
 -- Os conjuntos de registros devem ter a mesma quantidade de colunas.
 -- As colunas devem ser de tipos de dados compatíveis.
 
--- UNION: Operador usado para combinar (união) o resultado de duas ou mais declarações SELECT.
-   -- Exemplo: Recuperar as cidades dos médicos e as cidades dos pacientes.
-      SELECT cidade 
-      FROM medico 
-      UNION 
-      SELECT cidade 
-      FROM paciente;
-      -- Tabelas:
+-- Tabelas:
          -- [Médico]:       [Pacientes]:
          -- | CIDADE        | CIDADE         |
          -- | Porto Alegre  | São Paulo      |
@@ -33,6 +26,14 @@
          -- | Campo Grande  |
          -- | São Paulo     | 
          -- | São Paulo     |
+
+-- UNION: Operador usado para combinar (união) o resultado de duas ou mais declarações SELECT.
+   -- Exemplo: Recuperar as cidades dos médicos e as cidades dos pacientes.
+      SELECT cidade 
+      FROM medico 
+      UNION 
+      SELECT cidade 
+      FROM paciente;
       -- Saída:
          -- | CIDADE         | 
          -- | Porto Alegre   | 
@@ -51,17 +52,6 @@
       UNION ALL
       SELECT cidade 
       FROM paciente;
-      -- Tabelas:
-         -- [Médico]:       [Pacientes]:
-         -- | CIDADE        | CIDADE         |
-         -- | Porto Alegre  | São Paulo      |
-         -- | Florianópolis | Rio de Janeiro |
-         -- | Brasília      | Brasília       |
-         -- | NULL          | NULL           |
-         -- | São Paulo     | São Paulo      |
-         -- | Campo Grande  |
-         -- | São Paulo     | 
-         -- | São Paulo     |
       -- Saída:
          -- | CIDADE         |
          -- | Porto Alegre   | 
@@ -96,17 +86,6 @@
       SELECT DISTINCT m.cidade 
       FROM medico m 
       INNER JOIN paciente p ON (m.cidade = p.cidade);
-      -- Tabelas:
-         -- [Médico]:       [Pacientes]:
-         -- | CIDADE        | CIDADE         |
-         -- | Porto Alegre  | São Paulo      |
-         -- | Florianópolis | Rio de Janeiro |
-         -- | Brasília      | Brasília       |
-         -- | NULL          | NULL           |
-         -- | São Paulo     | São Paulo      |
-         -- | Campo Grande  |
-         -- | São Paulo     | 
-         -- | São Paulo     |
       -- Saída:
          -- | CIDADE    |
          -- | Brasília  |
