@@ -9,7 +9,7 @@
    -- Junção Externa à Esquerda e à Direita (FULL OUTER JOIN) – MySQL não aceita.
 
 -- Tabelas:
--- [Emp]                              [Depto]
+-- [Emp]                                [Depto]
 -- | MATR | E_NOME | SALARIO | DEPTO_ID | ID | D_NOME      | 
 -- | 123  | Mary   | 4000.00 |  1       | 1  | Informática |
 -- | 234  | John   | 3000.00 |  1       | 2  | Matemática  |
@@ -54,15 +54,17 @@
       SELECT e.matr, e.nome 
       FROM emp e 
       INNER JOIN depto d ON (e.depto_id = d.id) 
-      WHERE d.nome = 'Informática'; 
+      WHERE d.d_nome = 'Informática'; 
       -- Saída:
          -- [1a. Etapa(ON (e.depto_id = d.id))]:
+         -- [Emp e]                                 [Depto d]
          -- | MATR | E_NOME | SALARIO | [DEPTO_ID | ID] | D_NOME      |
          -- | 123  | Mary   | 4000.00 | [ 1       | 1 ] | Informática |
          -- | 234  | John   | 3000.00 | [ 1       | 1 ] | Informática |
          -- | 345  | Jim    | 2500.00 | [ 2       | 2 ] | Matemática  |
          -- | 456  | Ann    | 3500.00 | [ 3       | 3 ] | Física      |
-         -- [2a. Etapa(WHERE d.nome = 'Informática')]:
+         -- [2a. Etapa(WHERE d.d_nome = 'Informática')]:
+         -- [T1 + T2 unidas]
          -- | MATR | E_NOME | SALARIO | DEPTO_ID | ID | [D_NOME       ] |
          -- | 123  | Mary   | 4000.00 | 1        | 1  | [ Informática ] |
          -- | 234  | John   | 3000.00 | 1        | 1  | [ Informática ] |
@@ -81,15 +83,24 @@
    WHERE d.d_nome = 'Informática';
    -- Saída: 
       -- [1a. Etapa(D_ID nas duas tabelas, não precisa especificar com ON)]:
-      -- | MATR | NOME | SALARIO | [D_ID | D_ID] | D_NOME        |
+      -- | MATR | NOME | SALARIO | [D_ID | D_ID] | D_NOME      |
       -- | 123  | Mary | 4000.00 | [ 1   |   1 ] | Informática |
       -- | 234  | John | 3000.00 | [ 1   |   1 ] | Informática |
       -- | 345  | Jim  | 2500.00 | [ 2   |   2 ] | Matemática  |
       -- | 456  | Ann  | 3500.00 | [ 3   |   3 ] | Física      |
+    -----------------------------> [ Faz o math ] <----------------- Colunas com mesmo nome (NATURAL)
+    ---------------------------------------------------------------- Exclui as duplicatas (DISTINCT)
       -- [Resultado final (WHERE d.d_nome = 'Informática')]:
       -- | D_ID | MATR | NOME | SALARIO | [D_NOME       ] |
       -- | 1    | 123  | Mary | 4000.00 | [ Informática ] |
       -- | 1    | 234  | John | 3000.00 | [ Informática ] |
+      ---|-2----|-345--|-Jim--|-2500.00-|---Matemática----|--
+      ---|-3----|-456--|-Ann--|-3500.00-|---Física--------|--
+         -- Saída: 
+            -- | D_ID | MATR | NOME | SALARIO | D_NOME      |
+            -- | 1    | 123  | Mary | 4000.00 | Informática |
+            -- | 1    | 234  | John | 3000.00 | Informática |
+
      
 -- Junção Externa à Esquerda (LEFT OUTER JOIN):
    -- Conceituando: Obtém uma tabela contendo os registros da tabela T1 e os registros da tabela T2. Traz todos os registros de T1, mesmo que não haja match com registro da tabela T2.
