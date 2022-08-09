@@ -179,4 +179,38 @@ HAVING filtro_agrupamento;
    WHERE Produto = 'Teclado'
    GROUP BY cidade
    HAVING SUM(qntd) < 1500;
+   -- [1a Etapa(GROUP BY cidade) quebra e organiza por cidade (grupos de cidade)]:
+   -- [vendas]: LEMBRANDO QUE SÓ VAI SELECIONAR A COLUNA CIDADE!
+   -- | id | nome_vdedor| qntd | produto | [ cidade     ] |
+   -- | 10 | Jorge      | 1400 | Mouse   | São Paulo      |
+   -- | 12 | Tatiana    | 1220 | Teclado | São Paulo      |
+   -- | 18 | Marcos     | 980  | Mouse   | São Paulo      |
+   -- | 22 | Roberto    | 3145 | Mouse   | São Paulo      |
 
+   -- | 15 | Rita       | 2120 | Webcan  | Recife         | 
+   -- | 19 | Carla      | 1120 | Webcan  | Recife         |
+
+   -- | 14 | Ana        | 1700 | Teclado | Rio de Janeiro |
+  
+   -- [2a Etapa(WHERE produto = 'Teclado') e após aplica a soma SUM(qntd)]:
+   -- [vendas]: LEMBRANDO QUE SÓ VAI SELECIONAR A COLUNA CIDADE!
+   -- | id | nome_vdedor| qntd | [ produto ] |  cidade        |
+   ---|-10-|-Jorge------|-1400-|---Mouse-----|-São-Paulo------|--
+   -- | 12 | Tatiana    | 1220 |   Teclado   | São Paulo      |
+   ---|-18-|-Marcos-----|-980--|---Mouse-----|-São-Paulo------|--
+   ---|-22-|-Roberto----|-3145-|---Mouse-----|-São-Paulo------|--
+ ---------------------> [ 1220 ] <--------------------------------- SUM(qntd) total
+
+   ---|-15-|-Rita-------|-2120-|-Webcan--|-Recife---------|---
+   ---|-19-|-Carla------|-1120-|-Webcan--|-Recife---------|---
+ 
+   -- | 14 | Ana        | 1700 | Teclado | Rio de Janeiro |
+ ---------------------> [ 1700 ] <-------------------------------- SUM(qntd) total
+
+   -- [3a Etapa(HAVING SUM(qntd) < 1500) aplica a mesma lógica anterior, e verifica se o resultado total da soma POR grupos é menor que 1500]
+   -- | 12 | Tatiana    | 1220 |   Teclado   | [ São Paulo     ] |
+ ----------------------> [ 1220 ] <-- Menor que 1500 (true) cai na condição HAVING
+
+   -- Saída:
+   -- | cidade    | Total | 
+   -- | São Paulo | 1220  |
