@@ -1,0 +1,5 @@
+-- Conceituando: 
+
+-- NOT
+-- AND
+-- OR
