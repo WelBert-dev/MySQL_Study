@@ -171,3 +171,12 @@ HAVING filtro_agrupamento;
    -- Saída:
       -- | cidade         | Total | 
       -- | Rio de Janeiro | 1700  |
+
+
+-- Exemplo 2 (GROUP BY com WHERE, SUM E HAVING): Consulta retornando total de vendas do produto 'Teclado' das cidades com menos de 1500 teclados vendidos:
+   SELECT cidade, SUM(qntd) AS Total_Teclados
+   FROM vendas
+   WHERE Produto = 'Teclado'
+   GROUP BY cidade
+   HAVING SUM(qntd) < 1500;
+
