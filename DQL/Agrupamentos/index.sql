@@ -12,7 +12,10 @@
 -- | 19 | Carla      | 1120 | Webcan  | Recife         |
 -- | 22 | Roberto    | 3145 | Mouse   | São Paulo      |
 
--- GROUP BY:
+-- GROUP BY: Cláusula utilizada para agrupar colunas
+-- HAVING: Operador equivalente ao WHERE do SELECT, porém utilizado em conjunto com GROUP BY!
+
+-- Exemplo 1: 
 
 
 
