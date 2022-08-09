@@ -44,7 +44,7 @@ GROUP BY colunas;
    FROM vendas
    GROUP BY cidade;
    -- [1a Etapa(GROUP BY cidade) quebra e organiza por cidade (grupos de cidade)]:
-   -- [vendas]:
+   -- [vendas]: LEMBRANDO QUE SÓ VAI SELECIONAR A COLUNA CIDADE!
    -- | id | nome_vdedor| qntd | produto | [ cidade     ] |
    -- | 10 | Jorge      | 1400 | Mouse   | São Paulo      |
    -- | 12 | Tatiana    | 1220 | Teclado | São Paulo      |
@@ -56,7 +56,7 @@ GROUP BY colunas;
 
    -- | 14 | Ana        | 1700 | Teclado | Rio de Janeiro |
 
-   -- [2a Etapa(SUM(qntd) as Total_Vendas) Aplica para cada grupo a soma das colunas]:
+   -- [2a Etapa(SUM(qntd) as Total_Vendas) Aplica para cada grupo a soma das células da coluna]:
    -- [vendas]:
    -- | id | nome_vdedor| [ qntd ] | produto | cidade         |
    -- | 10 | Jorge      | 1400     | Mouse   | São Paulo      |
@@ -78,5 +78,42 @@ GROUP BY colunas;
       -- | Rio de Janeiro | 1700         |
       -- | São Paulo      | 6745         |
 
+ -- Exemplo 3 (GROUP BY com COUNT): Contar o número de registros de vendas POR cidade
+    SELECT cidade, COUNT(*) as Total 
+    FROM vendas
+    GROUP BY cidade;
+    -- [1a Etapa(GROUP BY cidade) quebra e organiza por cidade (grupos de cidade)]:
+    -- [vendas]: LEMBRANDO QUE SÓ VAI SELECIONAR A COLUNA CIDADE!
+    -- | id | nome_vdedor| qntd | produto | [ cidade     ] |
+    -- | 10 | Jorge      | 1400 | Mouse   | São Paulo      |
+    -- | 12 | Tatiana    | 1220 | Teclado | São Paulo      |
+    -- | 18 | Marcos     | 980  | Mouse   | São Paulo      |
+    -- | 22 | Roberto    | 3145 | Mouse   | São Paulo      |
 
+    -- | 15 | Rita       | 2120 | Webcan  | Recife         | 
+    -- | 19 | Carla      | 1120 | Webcan  | Recife         |
+
+    -- | 14 | Ana        | 1700 | Teclado | Rio de Janeiro |
+
+    -- [2a Etapa(COUNT(*) as Total) conta os registros de cidade POR grupos]:
+    -- [vendas]:
+    -- | id | nome_vdedor| [ qntd ] | produto | cidade         |
+    -- | 10 | Jorge      | 1400     | Mouse   | São Paulo      |
+    -- | 12 | Tatiana    | 1220     | Teclado | São Paulo      |
+    -- | 18 | Marcos     | 980      | Mouse   | São Paulo      |
+    -- | 22 | Roberto    | 3145     | Mouse   | São Paulo      |
+  -------------------------------------------> [ 4 Registros ] <----
+
+    -- | 15 | Rita       | 2120     | Webcan  | Recife         | 
+    -- | 19 | Carla      | 1120     | Webcan  | Recife         |
+  -------------------------------------------> [ 2 Registros ] <----
+
+    -- | 14 | Ana        | 1700     | Teclado | Rio de Janeiro |
+  -------------------------------------------> [ 1 Registro ]  <----
+
+    -- Saída: Organiza em ASC 
+    -- | cidade         | Total | 
+    -- | Recife         | 2     |
+    -- | Rio de Janeiro | 1     |
+    -- | São Paulo      | 4     |
 
