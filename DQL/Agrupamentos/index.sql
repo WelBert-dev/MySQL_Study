@@ -130,4 +130,44 @@ WHERE filtro
 GROUP BY colunas
 HAVING filtro_agrupamento;
 
+-- Exemplo 1(GROUP BY com SUM e HAVING): Consulta retornando total de vendas das cidades com menos de 2500 produtos vendidos:
+   SELECT cidade, SUM(qntd) AS Total
+   FROM vendas
+   GROUP BY cidade
+   HAVING SUM(qntd) < 2500;
+   -- [1a Etapa(GROUP BY cidade) quebra e organiza por cidade (grupos de cidade)]:
+   -- [vendas]: LEMBRANDO QUE SÓ VAI SELECIONAR A COLUNA CIDADE!
+   -- | id | nome_vdedor| qntd | produto | [ cidade     ] |
+   -- | 10 | Jorge      | 1400 | Mouse   | São Paulo      |
+   -- | 12 | Tatiana    | 1220 | Teclado | São Paulo      |
+   -- | 18 | Marcos     | 980  | Mouse   | São Paulo      |
+   -- | 22 | Roberto    | 3145 | Mouse   | São Paulo      |
 
+   -- | 15 | Rita       | 2120 | Webcan  | Recife         | 
+   -- | 19 | Carla      | 1120 | Webcan  | Recife         |
+
+   -- | 14 | Ana        | 1700 | Teclado | Rio de Janeiro |
+   
+   -- [2a Etapa(SUM(qntd) as Total_Vendas) Aplica para cada grupo a soma das células da coluna]:
+   -- [vendas]:
+   -- | id | nome_vdedor| [ qntd ] | produto | cidade         |
+   -- | 10 | Jorge      | 1400     | Mouse   | São Paulo      |
+   -- | 12 | Tatiana    | 1220     | Teclado | São Paulo      |
+   -- | 18 | Marcos     | 980      | Mouse   | São Paulo      |
+   -- | 22 | Roberto    | 3145     | Mouse   | São Paulo      |
+ ----------------------> [ 6745 ] <-------------------------------
+        
+   -- | 15 | Rita       | 2120     | Webcan  | Recife         | 
+   -- | 19 | Carla      | 1120     | Webcan  | Recife         |
+ ----------------------> [ 3240 ] <-------------------------------
+
+   -- | 14 | Ana        | 1700     | Teclado | Rio de Janeiro |
+ ----------------------> [ 1700 ] <-------------------------------
+
+   -- [3a Etapa(HAVING SUM(qntd) < 2500) aplica a mesma lógica anterior, e verifica se o resultado total da soma POR grupos é menor que 2500]
+   -- | 14 | Ana        | 1700     | Teclado | Rio de Janeiro |
+ ----------------------> [ 1700 ] <-- Menor que 2500 (true) cai na condição HAVING
+
+   -- Saída:
+      -- | cidade         | Total | 
+      -- | Rio de Janeiro | 1700  |
