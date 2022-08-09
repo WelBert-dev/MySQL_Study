@@ -78,6 +78,7 @@ GROUP BY colunas;
       -- | Rio de Janeiro | 1700         |
       -- | São Paulo      | 6745         |
 
+
  -- Exemplo 3 (GROUP BY com COUNT): Contar o número de registros de vendas POR cidade
     SELECT cidade, COUNT(*) as Total 
     FROM vendas
@@ -116,4 +117,17 @@ GROUP BY colunas;
     -- | Recife         | 2     |
     -- | Rio de Janeiro | 1     |
     -- | São Paulo      | 4     |
+
+
+-- cláusula HAVING:
+   -- Conceituando: Utilizada para especificar condições de filtragem em grupos de registros ou agregacões.
+   -- É frequentemente usada com a cláusula GROUP BY para filtrar as colunas agrupadas.
+
+-- Corpo básico de uma Query com HAVING:
+SELECT colunas, função_agregacão()
+FROM tabela
+WHERE filtro
+GROUP BY colunas
+HAVING filtro_agrupamento;
+
 
