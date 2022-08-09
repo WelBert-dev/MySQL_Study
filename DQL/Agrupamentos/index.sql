@@ -211,5 +211,3 @@ HAVING filtro_agrupamento;
    -- Saída:
       -- | cidade    | Total | 
       -- | São Paulo | 1220  |
-
-   
