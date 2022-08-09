@@ -112,10 +112,10 @@ GROUP BY colunas;
     -- | 14 | Ana        | 1700     | Teclado | Rio de Janeiro |
   -------------------------------------------> [ 1 Registro ]  <---- COUNT(*)
     -- Saída: Organiza em ASC 
-    -- | cidade         | Total | 
-    -- | Recife         | 2     |
-    -- | Rio de Janeiro | 1     |
-    -- | São Paulo      | 4     |
+       -- | cidade         | Total | 
+       -- | Recife         | 2     |
+       -- | Rio de Janeiro | 1     |
+       -- | São Paulo      | 4     |
 
 
 -- cláusula HAVING:
@@ -209,7 +209,7 @@ HAVING filtro_agrupamento;
    -- | 12 | Tatiana    | 1220 |   Teclado   | [ São Paulo     ] |
  ----------------------> [ 1220 ] <-- Menor que 1500 (true) cai na condição HAVING
    -- Saída:
-   -- | cidade    | Total | 
-   -- | São Paulo | 1220  |
+      -- | cidade    | Total | 
+      -- | São Paulo | 1220  |
 
    
