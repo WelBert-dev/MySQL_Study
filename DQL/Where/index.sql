@@ -11,6 +11,7 @@
     -- Operadores Relacionais (>, >=, <, <=, <>, !=): Mesma lógica de todas linguagens (./OperadoresRelacionais) 
     -- Operadores Booleanos (0, false, 1, true): Mesma lógica de todas linguagens.
     -- Operadores Aritméticos (math): Mesma lógica de todas linguagens.
+    -- Expressões regulares: REGEXP: Mais informações em breve.
 
 -- Operadores de Filtragem utilizados em conjunto com a cláusula WHERE (./OperadoresDeFiltragem):
    -- LIKE '%_' (e NOT LIKE) REGEX
