@@ -50,3 +50,5 @@
       - ROLLBACK: Rollbacks a transaction in case of any error occurs.
       - SAVEPOINT:Sets a savepoint within a transaction.
       - SET TRANSACTION: Specify characteristics for the transaction.
+
+* Null: Pasta especial sobre como lidar com NULL's e tratamentos (Em estudos).
