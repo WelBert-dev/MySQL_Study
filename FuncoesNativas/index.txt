@@ -1,10 +1,11 @@
-* Conceituando: Funções nativas são as funções "Prontas" que o MySQL nos fornece, sendo elas:
+* Conceituando: Funções nativas são as funções "Prontas" que o MySQL nos fornece, sendo elas as mais utilizadas:
 * Fonte: http://theclub.com.br/Restrito/Revistas/201005/func1005.aspx
+* TODAS funções: https://dev.mysql.com/doc/refman/8.0/en/functions.html
 
 * Funções de Agregação: São muito utilizadas em conjunto com Agrupamentos (GROUP BY),
     - Então para mais detalhes: ../Agrupamentos/OperadoresAgregados/index.sql
 
-* Funções para manipulação de DATA e HORA:
+* Funções para manipulação de DATA e HORA: https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html
     - ADD_DATE(data, dias): Adiciona o número de dias a data informada.
     - CURDATE(): Retorna a data corrente do sistema.
     - DATEDIFF(data1, data2): Retorna a diferença entre data1 e data2.
@@ -12,8 +13,9 @@
     - DAYOFWEEK(data): Retorna o índice do dia do ano, de acordo com a data informada.
     - TIME_TO_SEC(hora): Retorna a hora convertida em segundos.
     - WEEKOFYEAR(data): Retorna o índice da semana do ano, de acordo com a data informada.
+    -- Para mais informações (Todas as funções) ./FuncDataHora/index.sql (em construção).
 
-* Funções para manipulação de Strings:
+* Funções para manipulação de Strings: https://dev.mysql.com/doc/refman/8.0/en/string-functions.html
     - CONCAT(valor1, valor2,...): Concatena as strings informadas em valor.
     - INSERT(string,posição, substituídas, valor): Insere o valor na string de acordo com a posição (posição inicial) e substituídas (numero de caracteres a serem substituídos).
     - INSTR(string, substring): Retorna a posição onde se inicia a substring dentro da string informada
@@ -25,8 +27,9 @@
     - RIGHT(string, pos): Retorna os caracteres da string definidos em pos, iniciando a contagem da esquerda para direita.
     - SOUNDEX(string1) = SOUNDEX(string2): Compara a string1 com a  string2  e retorna 0 caso elas não se pareçam ou 1 caso tenham pronuncias parecidas (em ingles), útil para procura de nomes iguais escritos com grafias diferentes em sua base de dados . No exemplo abaixo o retorno será 1.
     - UCASE(string): Retorna a string em letras maiúsculas.
+    -- Para mais informações (Todas as funções) ./FuncNativeDataHora/index.sql (em construção).
     
-* Funções para calculos matemáticos:
+* Funções para calculos matemáticos: https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html
     - CEILING(X), CEIL(X): Arredonda “para cima”.
     - FLOOR(X): Arredonda “para baixo”.
     - MOD(num1, num2): Retorna o módulo, ou seja o resto da divisão de num1 para num2.
@@ -34,7 +37,8 @@
     - ROUND(num), ROUND(num, decimais): Arredonda um valor, inteiro ou double, para um valor com o número de casas decimais digitadas em decimais, caso nada seja digitado, decimais assume o valor zero.
     - SQRT(num): Retorna a raiz quadrada de num.
     - TRUNCATE(num, decimais): Decimais define quantas casas decimais serão mantidos após o truncamento de num.
-    
-* Funções de criptografia:
+    -- Para mais informações (Todas as funções) ./FuncNativeMatematica/index.sql (em construção).
+
+* Funções de criptografia: https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html
     - MD5('Bruno'): O MD5 é um algoritmo unidirecional, ou seja, depois de criptografado não permite que seja descriptografado.
     - PASSWORD(string): Calcula através da string passada o valor da mesma criptografada. Essa função é usada pelo MYSQL para armazenar as senhas dos usuários do banco
