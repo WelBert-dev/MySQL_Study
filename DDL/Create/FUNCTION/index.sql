@@ -34,4 +34,21 @@
 
 -- Para EXCLUIR uma função:
     DROP FUNCTION nome-da-função;
-    
+
+
+-- Criando Funções com delimitador BEGIN e END: é preciso criar um delimitador com DELIMITER.
+    -- DELIMITER: Substitui ';' pela expressão passada.
+        -- Obs: Ao final passamos o delimitador padrão novamente para RESETAR e o MySQL voltar ao "Normal"
+
+-- Exemplo:
+    DELIMITER $$
+    CREATE FUNCTION fn_aumentaPrecoEmPercent(preco DECIMAL(10, 2), taxa DECIMAL(10, 2))
+    BEGIN 
+        RETURN preco + preco * taxa / 100;
+    END$$
+    DELIMITER ;
+-- Invocando a função: 
+    SELECT fn_aumentaPrecoEmPercent(50.00, 10.00) AS Resultado;
+    -- Saída:
+        -- | Resultado |
+        -- | 55.00     | 
