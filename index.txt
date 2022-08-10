@@ -52,3 +52,6 @@
       - SET TRANSACTION: Specify characteristics for the transaction.
 
 * Null: Pasta especial sobre como lidar com NULL's e tratamentos (Em estudos).
+
+* FuncoesNatives: Pasta contendo as funções mais utilizadas e link com todas funções Nativas da linguagem.
+
