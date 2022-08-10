@@ -1,15 +1,15 @@
--- Conceituando:
+-- Conceituando: Mesclagem de colunas de duas tabelas (com tipos compatíveis) em uma. 
 
--- Em algumas situações, é necessário realizar operações com conjuntos de registros 
-   -- União de conjuntos:
-      -- UNION 
-      -- UNION ALL
-   -- Interseção entre conjuntos:
-      -- com IN
-      -- com OUTER JOIN
-   -- Diferença entre conjuntos:
-      -- com IN
-      -- com OUTER JOIN
+-- Tipos de conjuntos(Mesclagem):
+   -- União de conjuntos (Sem lógica para unir):
+      -- UNION: Mescla a coluna de duas tabelas em uma, mantendo NULL's e excluindo duplicatas (DISTINCT) 
+      -- UNION ALL: mescla a coluna de duas tabelas em uma, mantendo TUDO e não exclui duplicatas.
+   -- Interseção(Igualdade) entre conjuntos: Verifica igualdades entre t1 e t2 e retorna em uma tabela.
+      -- com IN:
+      -- com OUTER JOIN:
+   -- Diferença entre conjuntos: Verifica as diferenças entre t1 e t2 e retorna em uma tabela.
+      -- com IN:
+      -- com OUTER JOIN:
 
 -- As operações devem envolver dois conjuntos de registros retornados por uma declaração SELECT. 
 -- Os conjuntos de registros devem ter a mesma quantidade de colunas.

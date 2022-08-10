@@ -1,0 +1,37 @@
+* Conceituando: Data Query Language, Nesta pasta encontram - se todos os comandos utilizados para consulta,
+    Separado por pastas da seguinte maneira:
+
+* Caminhos/Resumo:
+    * Cláusula WHERE: Utilizado para filtrar os resultados por célula da coluna:
+        - SubComandos: 
+            - Operadores de Filtragem (SQL): LIKE(REGEX), IN(list), BETWEEN(interválo).
+            - Operadores Relacionais (Mesma lógica de todas linguagens): >, >=, <, <=, <>, !=
+            - Operadores Lógicos (Mesma lógica de todas as linguagens): NOT, AND, OR
+            - Operadores Aritméticos (Mesma lógica de todas as linguagens): /, *, %, +, -
+            - Operadores Booleanos (Mesma lógica de todas as linguagens): 0, false, 1, true.
+        - Para mais informações: ./Where/index.sql
+
+    * Junções: Utilizado para "ajuntar" duas ou mais tabelas em uma (lado a lado): 
+        - Tipos de junção (diferenças nos JOIN: https://pt.stackoverflow.com/questions/6441/qual-%c3%a9-a-diferen%c3%a7a-entre-inner-join-e-outer-join):
+            - Produto Cartesiano (CROSS JOIN): Junção com todas as possibilidades.
+            - Junção Interna (INNER JOIN): Junção utilizando uma flag math, com eliminação de NULL's (commom: math pelos id).
+            - Junção Natural (NATURAL JOIN): Junção com flag "Explícita", com eliminação de NULL's (tabelas com o mesmo nome, saída com DISTINCT).
+            - Junção Externa à Esquerda (LEFT OUTER JOIN): Junção da tabela INTEIRA da esquerda utilizando uma flag math(ON t1.t2_id = t2.id), completando com NULL's na direita. 
+            - Junção Externa à Direita (RIGHT OUTER JOIN): Junção da tabela INTEIRA da direita utilizando uma flag math(ON t1.t2_id = t2.id), completando com NULL's na esquerda.
+            - Junção Externa à Esquerda e à Direita (FULL OUTER JOIN) – MySQL não aceita.
+        - Para mais informações: ./Junções/index.sql
+
+    * Conjuntos: Utilizado para mexclar duas tabelas em uma na mesma coluna (Tipos devem ser compatíveis):
+        - Tipos de conjuntos:
+            - União (UNION, UNION ALL): Utilizado para unir sem lógica de união.
+            - Interseção(MySQL não possui Operador, existe um macete): Utilizado para unir valores que são iguais nas tabelas t1 e t2.
+            - Diferença(MySQL não possui Operador, existe um macete): Utilizado para unir valores que NÂO são iguais nas tabelas t1 e t2.
+        - Para mais informações: ./Conjuntos/index.sql
+
+    * Agrupamentos (GROUP BY): Utilizado para agrupar valores de uma tabela utilizando alguma comparação equals (geralmente em conjunto de funções agregadas)
+        - Exemplo: Agrupar clientes cuja muradia = 'Salto' e aplica um COUNT(*) para somar e devolver a quantidade.
+            - SubComandos:
+                - Funções de Agregação: MIN(), MAX(), AVG(), COUNT(), SUM(): utilizado para aplicar alguma lógica no agrupamento.
+                - Filtragem equivalente ao WHERE do SELECT: HAVING(valor) geralmente: HAVING função_agregação() expressão.
+                    - Exemplo: HAVING SUM(salário) > 1200
+        - Para mais informações: ./Agrupamentos/index.sql

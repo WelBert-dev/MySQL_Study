@@ -1,2 +1,0 @@
--- Exercícios CROSS JOIN
--- Para informações introdutórias, ler o index.sql deste diretório!

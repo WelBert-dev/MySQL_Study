@@ -1,2 +1,0 @@
--- Exercícios LEFT OUTER JOIN
--- Para informações introdutórias, ler o index.sql deste diretório!
