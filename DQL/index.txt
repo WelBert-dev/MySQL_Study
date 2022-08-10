@@ -36,3 +36,5 @@
                 - Filtragem equivalente ao WHERE do SELECT: HAVING(valor) geralmente: HAVING função_agregação() expressão.
                     - Exemplo: HAVING SUM(salário) > 1200
         - Para mais informações: ./Agrupamentos/index.sql
+    
+    * CONCAT 

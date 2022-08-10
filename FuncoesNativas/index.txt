@@ -1,0 +1,40 @@
+* Conceituando: Funções nativas são as funções "Prontas" que o MySQL nos fornece, sendo elas:
+* Fonte: http://theclub.com.br/Restrito/Revistas/201005/func1005.aspx
+
+* Funções de Agregação: São muito utilizadas em conjunto com Agrupamentos (GROUP BY),
+    - Então para mais detalhes: ../Agrupamentos/OperadoresAgregados/index.sql
+
+* Funções para manipulação de DATA e HORA:
+    - ADD_DATE(data, dias): Adiciona o número de dias a data informada.
+    - CURDATE(): Retorna a data corrente do sistema.
+    - DATEDIFF(data1, data2): Retorna a diferença entre data1 e data2.
+    - DATE_FORMAT(data, formato): Retorna a data formatada com o parâmetro passado ('%d/%m/%Y'). BR format
+    - DAYOFWEEK(data): Retorna o índice do dia do ano, de acordo com a data informada.
+    - TIME_TO_SEC(hora): Retorna a hora convertida em segundos.
+    - WEEKOFYEAR(data): Retorna o índice da semana do ano, de acordo com a data informada.
+
+* Funções para manipulação de Strings:
+    - CONCAT(valor1, valor2,...): Concatena as strings informadas em valor.
+    - INSERT(string,posição, substituídas, valor): Insere o valor na string de acordo com a posição (posição inicial) e substituídas (numero de caracteres a serem substituídos).
+    - INSTR(string, substring): Retorna a posição onde se inicia a substring dentro da string informada
+    - LCASE(string), LOWER(string): Retorna a string em letras minúsculas.
+    - LTRIM(string): Retira os espaços em branco do lado esquerdo da string.
+    - REPEAT(string, quantidade): Repete uma string de acordo com o que foi definido em quantidade.
+    - REPLACE(string,substituir,substituta):  Retira da string o definido em substituir e adiciona substituta.
+    - REVERSE(string): Inverte a string.
+    - RIGHT(string, pos): Retorna os caracteres da string definidos em pos, iniciando a contagem da esquerda para direita.
+    - SOUNDEX(string1) = SOUNDEX(string2): Compara a string1 com a  string2  e retorna 0 caso elas não se pareçam ou 1 caso tenham pronuncias parecidas (em ingles), útil para procura de nomes iguais escritos com grafias diferentes em sua base de dados . No exemplo abaixo o retorno será 1.
+    - UCASE(string): Retorna a string em letras maiúsculas.
+    
+* Funções para calculos matemáticos:
+    - CEILING(X), CEIL(X): Arredonda “para cima”.
+    - FLOOR(X): Arredonda “para baixo”.
+    - MOD(num1, num2): Retorna o módulo, ou seja o resto da divisão de num1 para num2.
+    - POW(num1, num2), POWER(num1, num2): Retorna a potência de num1 elevado a num2.
+    - ROUND(num), ROUND(num, decimais): Arredonda um valor, inteiro ou double, para um valor com o número de casas decimais digitadas em decimais, caso nada seja digitado, decimais assume o valor zero.
+    - SQRT(num): Retorna a raiz quadrada de num.
+    - TRUNCATE(num, decimais): Decimais define quantas casas decimais serão mantidos após o truncamento de num.
+    
+* Funções de criptografia:
+    - MD5('Bruno'): O MD5 é um algoritmo unidirecional, ou seja, depois de criptografado não permite que seja descriptografado.
+    - PASSWORD(string): Calcula através da string passada o valor da mesma criptografada. Essa função é usada pelo MYSQL para armazenar as senhas dos usuários do banco
