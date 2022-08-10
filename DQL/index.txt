@@ -9,6 +9,7 @@
             - Operadores Lógicos (Mesma lógica de todas as linguagens): NOT, AND, OR
             - Operadores Aritméticos (Mesma lógica de todas as linguagens): /, *, %, +, -
             - Operadores Booleanos (Mesma lógica de todas as linguagens): 0, false, 1, true.
+            - Expressões regulares: REGEXP: (Mais detalhes em breve)
         - Para mais informações: ./Where/index.sql
 
     * Junções: Utilizado para "ajuntar" duas ou mais tabelas em uma (lado a lado): 
