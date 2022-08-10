@@ -29,3 +29,27 @@
     -- Saída:
         -- | Preço            |
         -- | O preço é: 61.45 |
+
+-- Criando Procedimentos com delimitador BEGIN e END: é preciso criar um delimitador com DELIMITER.
+    -- DELIMITER: Substitui ';' pela expressão passada.
+        -- Obs: Ao final passamos o delimitador padrão novamente para RESETAR e o MySQL voltar ao "Normal"
+
+-- Exemplo:
+    DELIMITER $$
+    CREATE PROCEDURE verPreco (varId_Livro smallint)
+    BEGIN
+        SELECT CONCAT('O preço é: ', Preco_Livro) AS Preço
+        FROM tbl_livros
+        WHERE Id_Livro = varId_Livro;
+        SELECT 'Procedimento realizado com sucesso! ;D';
+    END$$
+    DELIMITER ;
+
+    CALL verPreco(3);
+    -- Saída (janela 1):
+        -- | Preço            |
+        -- | O preço é: 61.45 |
+    -- Saída (janela 2):
+        -- | Procedimento realizado com sucesso! ;D |
+        -- | Procedimento realizado com sucesso! ;D |
+        
