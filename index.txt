@@ -54,4 +54,10 @@
 * Null: Pasta especial sobre como lidar com NULL's e tratamentos (Em estudos).
 
 * FuncoesNatives: Pasta contendo as funções mais utilizadas e link com todas funções Nativas da linguagem.
+   - Funções: Matemáticas, Manipulação de Strings, Manipulação de Data/hr e Criptografia.
+   
+* FUNCTION: Funções no MySQL ler a index.sql
 
+* PROCEDURE: Funções mais complexas ler a index.sql
+
+* VIEW: Tabelas virtuais ler a index.sql
