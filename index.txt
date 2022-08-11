@@ -4,7 +4,7 @@
 * Fontes:
    - Documentação Oficial MySQL8.0: https://dev.mysql.com/doc/refman/8.0/en/programs-overview.html
    - IFSP Campus Salto (Prof Haru).
-   -  Youtube: Bóson Treinamentos (https://youtube.com/c/bosontreinamentos).
+   - Youtube: Bóson Treinamentos (https://youtube.com/c/bosontreinamentos).
    - Youtube: Curso em Vídeo (https://youtube.com/c/CursoemV%C3%ADdeo).
 
 * Conceituando: Aqui contém todas as operações de acordo com o tipo SQL,
@@ -53,7 +53,7 @@
 
 * Null: Pasta especial sobre como lidar com NULL's e tratamentos (Em estudos).
 
-* FuncoesNatives: Pasta contendo as funções mais utilizadas e link com todas funções Nativas da linguagem.
+* FuncoesNativas: Pasta contendo as funções mais utilizadas e link com todas funções Nativas da linguagem.
    - Funções: Matemáticas, Manipulação de Strings, Manipulação de Data/hr e Criptografia.
    
 * FUNCTION: Funções no MySQL ler a index.sql

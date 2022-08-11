@@ -5,11 +5,11 @@
       -- UNION: Mescla a coluna de duas tabelas em uma, mantendo NULL's e excluindo duplicatas (DISTINCT) 
       -- UNION ALL: mescla a coluna de duas tabelas em uma, mantendo TUDO e não exclui duplicatas.
    -- Interseção(Igualdade) entre conjuntos: Verifica igualdades entre t1 e t2 e retorna em uma tabela.
-      -- com IN:
-      -- com OUTER JOIN:
+      -- com IN: Demonstação abaixo.
+      -- com OUTER JOIN: Demonstação abaixo.
    -- Diferença entre conjuntos: Verifica as diferenças entre t1 e t2 e retorna em uma tabela.
-      -- com IN:
-      -- com OUTER JOIN:
+      -- com IN: Demontração abaixo.
+      -- com OUTER JOIN: Demonstração abaixo.
 
 -- As operações devem envolver dois conjuntos de registros retornados por uma declaração SELECT. 
 -- Os conjuntos de registros devem ter a mesma quantidade de colunas.
@@ -45,7 +45,7 @@
          -- | Rio de Janeiro |
      
 -- UNION ALL: Faz a combinação, porém mantendo as duplicatas (Mais rápido que o UNION, pois não faz a comparação e DISTINCT)
--- O nº de cópias de uma linha no resultado é m + n, onde m e n é o nº de vezes que a linha aparece na primeira e na segunda parte da união •
+-- O nº de cópias de uma linha no resultado é m + n, onde m e n é o nº de vezes que a linha aparece na primeira e na segunda parte da união.
    -- Exemplo: Recuperar as cidades dos médicos e as cidades dos pacientes. 
       SELECT cidade 
       FROM medico 

@@ -1,11 +1,11 @@
 -- Conceituando: A junção é uma das operações mais úteis e a maneira mais comumente usada para combinar informações de duas ou mais tabelas 
 
 -- Tipos de junção:
-   -- Produto Cartesiano (CROSS JOIN).
-   -- Junção Interna (INNER JOIN).
-   -- Junção Natural (NATURAL JOIN).
-   -- Junção Externa à Esquerda (LEFT OUTER JOIN).
-   -- Junção Externa à Direita (RIGHT OUTER JOIN).
+   -- Produto Cartesiano (CROSS JOIN): Obtém todas combinações possíveis entre t1 e t2.
+   -- Junção Interna (INNER JOIN): Obtém a junção de t1 e t2 com uma lógica (math) com id por exemplo, NÃO TRABALHA COM NULL.
+   -- Junção Natural (NATURAL JOIN): Mesma lógica que INNER JOIN, porém com uma lógica explícita (Coluna com mesmo nome), NÂO TRABALHA COM NULL.
+   -- Junção Externa à Esquerda (LEFT OUTER JOIN): Mesma lógica que INNER JOIN, porém trabalha com NULL (Retorna os valores da tabela a esquerda e completa a direita com NULL's)
+   -- Junção Externa à Direita (RIGHT OUTER JOIN): Mesma lógica que LEFT porém retorna os valores da direita e completa com NULL's na esquerda.
    -- Junção Externa à Esquerda e à Direita (FULL OUTER JOIN) – MySQL não aceita. 
 
 -- Tabelas:
@@ -53,7 +53,7 @@
    -- Exemplo: Recuperar a matrícula e o nome dos empregados do departamento 'Informática'.
       SELECT e.matr, e.nome 
       FROM emp e 
-      INNER JOIN depto d ON (e.depto_id = d.id) 
+      INNER JOIN depto d ON (e.depto_id = d.id) --> ON faz o math e define qual vai ser a lógica de concatenação.
       WHERE d.d_nome = 'Informática'; 
       -- [1a. Etapa(ON (e.depto_id = d.id))]:
       -- [Emp e]                                 [Depto d]
